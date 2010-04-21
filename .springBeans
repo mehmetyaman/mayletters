@@ -4,7 +4,7 @@
         <configExtension>xml</configExtension>
     </configExtensions>
     <configs>
-        <config>src/main/webapp/WEB-INF/springDemo-servlet.xml</config>
+        <config>src/main/webapp/WEB-INF/springmvc-servlet.xml</config>
         <config>src/main/webapp/WEB-INF/applicationContext.xml</config>
     </configs>
     <configSets>
