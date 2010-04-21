@@ -10,25 +10,32 @@
 
   <!-- our beans -->
 
-    <bean id="springDemoController"
-        class="com.mayletters.mvc.controller.SpringDemoController">
+    <bean id="springDemoController" class="com.mayletters.mvc.controller.SpringDemoController">
         <property name="viewName" value="hello" />
     </bean>
       
-    <bean id="listPersonaController"
-        class="com.mayletters.mvc.controller.ListPersonaController">
+    <bean id="listPersonaController" class="com.mayletters.mvc.controller.ListPersonaController">
         <property name="personaDAO" ref="personaDAO" />
         <property name="viewName" value="lista_persone" />
     </bean>
 
-    <bean id="deletePersonaController"
-        class="com.mayletters.mvc.controller.DeletePersonaController">
+    <bean id="deletePersonaController" class="com.mayletters.mvc.controller.DeletePersonaController">
         <property name="personaDAO" ref="personaDAO" />
         <property name="viewName" value="redirect:/list.erm" />
     </bean>
+    
+    <bean id="registrationController" class="">
+        <property name="formView" value="/login/registration" />
+        <property name="successView" value="redirect:/home.erm" />
+    </bean>    
+    
+   	<bean name="/login/register.jsp" class="com.mayletters.mvc.controller.RegistrationController">
+        <property name="commandClass" value="com.mayletters.domain.User"/>
+        <property name="formView" value="registration"/>
+        <property name="successView" value="redirect:/home.erm"/>
+    </bean>
   
-    <bean id="formPersonaController"
-        class="com.mayletters.mvc.controller.MyFormController">
+    <bean id="formPersonaController" class="com.mayletters.mvc.controller.MyFormController">
         <property name="personaDAO" ref="personaDAO" />
         <property name="commandName" value="pers" />
         <property name="formView" value="myform" />
@@ -86,9 +93,10 @@
         </property>
         <property name="mappings">
             <props>
-              <prop key="/myform.*">formPersonaController</prop>
-                <prop key="/list.*">listPersonaController</prop>
-                <prop key="/delete.*">deletePersonaController</prop>
+				<prop key="/myform.*">formPersonaController</prop>
+				<prop key="/list.*">listPersonaController</prop>
+				<prop key="/delete.*">deletePersonaController</prop>
+				<prop key="/register.*">registrationController</prop>
             </props>
         </property>
     </bean>
@@ -119,7 +127,7 @@
         <property name="viewClass"
             value="org.springframework.web.servlet.view.JstlView">
         </property>
-        <property name="prefix" value="/WEB-INF/pagine/" />
+        <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
     </bean>
     
