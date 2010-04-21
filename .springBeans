@@ -14,7 +14,7 @@
             <incomplete>false</incomplete>
             <configs>
                 <config>src/main/webapp/WEB-INF/applicationContext.xml</config>
-                <config>src/main/webapp/WEB-INF/springDemo-servlet.xml</config>                
+                <config>src/main/webapp/WEB-INF/springmvc-servlet.xml</config>                
             </configs>
         </configSet>
     </configSets>
