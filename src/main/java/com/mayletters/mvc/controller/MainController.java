@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.mayletters.example;
+package com.mayletters.mvc.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,15 +14,15 @@ import org.springframework.web.servlet.mvc.ParameterizableViewController;
  * @author aykutt
  *
  */
-public class ExampleController extends ParameterizableViewController {
+public class MainController extends ParameterizableViewController {
 
 	@Override
 	protected ModelAndView handleRequestInternal(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		String who = ServletRequestUtils.getStringParameter(request, "who");
-	    ModelAndView mav = new ModelAndView();
-	    mav.addObject("who", (who == null ? "NULL" : who));
-	    mav.setViewName(who);
+		//Login operation here
+		
+		ModelAndView mav = new ModelAndView();
+	    mav.setViewName("public");
 	    return mav;
 	}
 
