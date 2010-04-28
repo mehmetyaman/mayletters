@@ -7,12 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table><tbody>
-<tr><td colspan="2" class="bottomline"></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td colspan="2" class="bottomline"></td></tr>
+<table class="group"><tbody>
+<tr><th colspan="2"  class="group">Login</th></tr>
+<tr><td>User</td><td><input type="text" value="User"/></td></tr>
+<tr><td>Pass</td><td><input type="password" value="pass"/></td></tr>
+<tr><td colspan="2"><input type="submit" value="Submit"/><td></td></tr>
 </tbody>
 </table>
 </body>
-</html>
