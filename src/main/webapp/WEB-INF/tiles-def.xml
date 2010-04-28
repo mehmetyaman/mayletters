@@ -14,10 +14,20 @@
 
   <!-- Main -->
   <definition name="main" template="/main/main.jsp">
+    <put-attribute name="title" value="Mektup Gonder" type="string" />
     <put-attribute name="head-position" value="/main/tiles/head.jsp"/>
     <put-attribute name="right-nav-position" value="/main/tiles/rightnav.jsp"/>
     <put-attribute name="body-position" value="/main/tiles/body.jsp"/>
     <put-attribute name="foot-position" value="/main/tiles/foot.jsp"/>
   </definition>
-
+  <definition name="public" template="/main/public.jsp">
+     <put-attribute name="title" value="Mektup Gonder" type="string" />
+    <put-attribute name="head-position" value="/main/tiles/public/head.jsp"/>
+    <put-attribute name="right-nav-position" value="/main/tiles/public/rightnav.jsp"/>
+    <put-attribute name="body-position" value="/main/tiles/public/body.jsp"/>
+    <put-attribute name="foot-position" value="/main/tiles/public/foot.jsp"/>
+  </definition>
+  
+  
+  
 </tiles-definitions>

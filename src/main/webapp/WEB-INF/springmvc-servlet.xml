@@ -15,6 +15,9 @@
 	<bean id="exampleController" class="com.mayletters.example.ExampleController">
 		<property name="viewName" value="main" />
 	</bean>
+	<bean id="mainController" class="com.mayletters.mvc.controller.MainController">
+		<property name="viewName" value="public" />
+	</bean>
 	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
        <property name="definitions">
             <list>
@@ -39,6 +42,7 @@
 		<property name="mappings">
 			<props>
 				<prop key="/example.*">exampleController</prop>
+				<prop key="/main.*">mainController</prop>
 			</props>
 		</property>
 	</bean>
