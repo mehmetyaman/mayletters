@@ -395,3 +395,8 @@ a:hover {
 #footer a {
 	color: #464032;
 }
+
+
+td.bottomline{border-bottom-style:ridge; border-bottom-width:2px;}
+td.leftline{border-left-style:ridge; border-left-width:1px;}
+td.linecolor{border-color: #9F5F9F;}
