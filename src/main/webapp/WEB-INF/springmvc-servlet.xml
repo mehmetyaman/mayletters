@@ -18,23 +18,25 @@
 	<bean id="mainController" class="com.mayletters.mvc.controller.MainController">
 		<property name="viewName" value="public" />
 	</bean>
-	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
-       <property name="definitions">
-            <list>
-                <value>/WEB-INF/tiles-def.xml</value>
-            </list>
-        </property>
-    </bean>
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles-def.xml</value>
+			</list>
+		</property>
+	</bean>
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"
-				value="org.springframework.web.servlet.view.tiles2.TilesView"/>
-		</bean>
-	<!--
-		<bean id="viewResolver2" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
-	  <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>
+			value="org.springframework.web.servlet.view.tiles2.TilesView" />
 	</bean>
-	-->
+	
+	<!-- RsourceBundle message -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="/WEB-INF/messages"/>
+	</bean>
+	
 	<!-- URL Mappings -->
 	<bean id="urlMapping"
 		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
@@ -141,6 +143,11 @@
 	<bean id="localeResolver"
 		class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
 	</bean>
+	<!--
+		<mvc:interceptors> <bean
+		class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"
+		p:paramName="locale" /> </mvc:interceptors>
+	-->
 
 	<bean id="localeChInterc"
 		class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
