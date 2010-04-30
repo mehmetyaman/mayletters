@@ -3,31 +3,37 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
 <tiles-definitions>
-
   <!-- Components -->
-  <definition name="head-tile" template="/main/tiles/head.jsp"/>
-  <definition name="right-nav-tile" template="/main/tiles/rightnav.jsp"/>
-  <definition name="body-tile" template="/main/tiles/body.jsp"/>
-  <definition name="foot-tile" template="/main/tiles/foot.jsp"/>
-
+ 
   <!-- Pages -->
-
+  <definition name="head" template="/main/tiles/public/head.jsp"/>
+  <definition name="foot" template="/main/tiles/public/foot.jsp"/>
+  <definition name="left-nav" template="/main/tiles/user/leftnav.jsp"/>
+  
   <!-- Main -->
-  <definition name="main" template="/main/main.jsp">
-    <put-attribute name="title" value="Mektup Gonder" type="string" />
-    <put-attribute name="head-position" value="/main/tiles/head.jsp"/>
-    <put-attribute name="right-nav-position" value="/main/tiles/rightnav.jsp"/>
-    <put-attribute name="body-position" value="/main/tiles/body.jsp"/>
-    <put-attribute name="foot-position" value="/main/tiles/foot.jsp"/>
-  </definition>
   <definition name="public" template="/main/public.jsp">
-     <put-attribute name="title" value="Mektup Gonder" type="string" />
-    <put-attribute name="head-position" value="/main/tiles/public/head.jsp"/>
+    <put-attribute name="head-position" value="head"/>
     <put-attribute name="right-nav-position" value="/main/tiles/public/rightnav.jsp"/>
     <put-attribute name="body-position" value="/main/tiles/public/body.jsp"/>
-    <put-attribute name="foot-position" value="/main/tiles/public/foot.jsp"/>
+    <put-attribute name="foot-position" value="foot"/>
+  </definition>
+ 
+  <definition name="register" extends="public">
+ 	 <put-attribute name="body-position" value="/main/tiles/public/register.jsp"/>  
+  </definition>
+ 
+ 
+  <definition name="usermain" template="/main/main.jsp">
+    <put-attribute name="head-position" value="head"/>
+    <put-attribute name="left-nav-position" value="left-nav"/>
+    <put-attribute name="body-position" value="/main/tiles/user/body.jsp"/>
+    <put-attribute name="foot-position" value="foot"/>
   </definition>
   
-  
-  
+ <definition name="adminmain" extends="usermain">
+    <put-attribute name="left-nav-position" value="/main/tiles/admin/leftnav.jsp"/>
+    <put-attribute name="body-position" value="/main/tiles/admin/body.jsp"/>
+  </definition>
+ 
+ 
 </tiles-definitions>

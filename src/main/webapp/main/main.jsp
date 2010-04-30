@@ -5,7 +5,7 @@
 <html>
   <head><title><tiles:insertAttribute name="title" ignore="true"/></title>
   <link href="<%=request.getContextPath()%>/layouts/css/deviation/style.css" rel="stylesheet" type="text/css" media="screen" />
-  </head>
+ </head>
   <body>
     <table border="0" cellpadding="2" cellspacing="2" align="center">
       <tr>
@@ -14,11 +14,11 @@
         </td>
       </tr>
       <tr>
-      	<td width="550" valign="top">
-          <tiles:insertAttribute name="body-position"/>
+        <td  width="150" height="450" valign="top"  class="rightline linecolor">
+          <tiles:insertAttribute name="left-nav-position"/>
         </td>
-        <td  width="150" height="500" valign="top"  class="leftline linecolor">
-          <tiles:insertAttribute name="right-nav-position"/>
+        <td width="550" valign="top">
+          <tiles:insertAttribute name="body-position"/>
         </td>
       </tr>
       <tr>

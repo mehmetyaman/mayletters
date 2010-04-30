@@ -350,51 +350,14 @@ a:hover {
 	color: #8A8A8A;
 }
 
-/* Calendar */
 
-#calendar {
+td {
+	text-align: left; 
 }
-
-#calendar_wrap {
-	padding: 20px;
-}
-
-#calendar table {
-	width: 100%;
-}
-
-#calendar tbody td {
+tbody{
 	text-align: center;
 }
 
-#calendar #next {
-	text-align: right;
-}
-
-/* Footer */
-
-#footer {
-	width: 940px;
-	height: 50px;
-	margin: 0 auto;
-	padding: 0px 0 15px 0;
-	border-top: 4px solid #EBE6D1;
-	font-family: Arial, Helvetica, sans-serif;
-}
-
-#footer p {
-	margin: 0;
-	padding-top: 20px;
-	line-height: normal;
-	font-size: 10px;
-	text-transform: uppercase;
-	text-align: center;
-	color: #444444;
-}
-
-#footer a {
-	color: #464032;
-}
 table.group{
 	border-style:solid;
 	border-width:1px; 
@@ -407,4 +370,5 @@ th.group{
 }
 td.bottomline{border-bottom-style:ridge; border-bottom-width:2px;}
 td.leftline{border-left-style:ridge; border-left-width:1px;}
+td.rightline{border-right-style:ridge; border-right-width:1px;}
 td.linecolor{border-color: #9F5F9F;}

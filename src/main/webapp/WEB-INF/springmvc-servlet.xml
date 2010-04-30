@@ -12,29 +12,12 @@
 
 	<!-- our beans -->
 	<import resource="classpath:applicationContext.xml" />
-	<bean id="exampleController" class="com.mayletters.example.ExampleController">
-		<property name="viewName" value="main" />
-	</bean>
+
 	<bean id="mainController" class="com.mayletters.mvc.controller.MainController">
 		<property name="viewName" value="public" />
 	</bean>
-	<bean id="tilesConfigurer"
-		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
-		<property name="definitions">
-			<list>
-				<value>/WEB-INF/tiles-def.xml</value>
-			</list>
-		</property>
-	</bean>
-	<bean id="viewResolver"
-		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
-		<property name="viewClass"
-			value="org.springframework.web.servlet.view.tiles2.TilesView" />
-	</bean>
-	
-	<!-- RsourceBundle message -->
-	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-		<property name="basename" value="/WEB-INF/messages"/>
+	<bean id="loginController" class="com.mayletters.mvc.controller.LoginController">
+		<property name="viewName" value="public" />
 	</bean>
 	
 	<!-- URL Mappings -->
@@ -43,12 +26,14 @@
 		<property name="alwaysUseFullPath" value="true" />
 		<property name="mappings">
 			<props>
-				<prop key="/example.*">exampleController</prop>
 				<prop key="/main.*">mainController</prop>
+				<prop key="/login.*">loginController</prop>
 			</props>
 		</property>
 	</bean>
 
+	
+	
 	<bean id="springDemoController" class="com.mayletters.mvc.controller.SpringDemoController">
 		<property name="viewName" value="hello" />
 	</bean>
@@ -90,7 +75,26 @@
 		<property name="appManager" ref="appManager" />
 	</bean>
 
-
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles-def.xml</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.tiles2.TilesView" />
+	</bean>
+	
+	<!-- RsourceBundle message -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="/WEB-INF/messages"/>
+	</bean>
+	
+	
 
 
 	<!-- Spring helpers -->

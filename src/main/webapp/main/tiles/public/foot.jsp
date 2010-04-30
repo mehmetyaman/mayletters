@@ -8,6 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<center>
  <p class="copyright">&copy; 2010-2011 </p>
+</center>
 </body>
 </html>
