@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- our beans -->
+	<import resource="applicationContext.xml" />
+
+	<context:component-scan base-package="com.mayletters.mvc.controller" />
+
+	<!-- tiles sss -->
+
+	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles-def.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/main/tiles/" />
+		<property name="suffix" value=".jsp" />
+		<property name="order">
+			<value>1</value>
+		</property>
+	</bean>
+
+	<!-- tiles eee -->
+
+	<!-- RsourceBundle message -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="/WEB-INF/messages" />
+	</bean>
+
+	<bean id="personaValidator" class="com.mayletters.validator.PersonaValidator">
+	</bean>
+
+	<bean id="puliziaConnessione"
+		class="com.mayletters.mvc.intercept.EntityManagerCleanupInterceptor">
+		<property name="appManager" ref="appManager" />
+	</bean>
+
+	<!-- Spring helpers -->
+
+	<!-- classic stuff -->
+
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+	</bean>
+
+	<bean id="localeChInterc"
+		class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+		<property name="paramName" value="linguaggio" />
+	</bean>
+
+	<bean id="themeResolver"
+		class="org.springframework.web.servlet.theme.CookieThemeResolver">
+		<property name="defaultThemeName" value="tema1" />
+	</bean>
+
+	<bean id="themeSource"
+		class="org.springframework.ui.context.support.ResourceBundleThemeSource">
+		<property name="basenamePrefix" value="themes." />
+	</bean>
+
+</beans>
