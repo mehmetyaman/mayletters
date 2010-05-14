@@ -1,12 +1,11 @@
 package com.mayletters.mvc.intercept;
 
-import com.mayletters.service.AppManager;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
-import org.springframework.web.servlet.ModelAndView;
+
+import com.mayletters.service.AppManager;
 
 public class EntityManagerCleanupInterceptor extends HandlerInterceptorAdapter {
 
