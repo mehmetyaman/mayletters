@@ -156,11 +156,6 @@
 			<version>${c3p0-version}</version>
 		</dependency>
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>${log4j-version}</version>
-		</dependency>
-		<dependency>
 			<groupId>hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
 			<version>${hsql-version}</version>
@@ -175,26 +170,37 @@
 			<artifactId>geronimo-spec-jta</artifactId>
 			<version>${geronimo-spec-version}</version>
 		</dependency>
+
+		<!-- tiles sss -->
 		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts-tiles</artifactId>
-			<version>${struts-tiles-version}</version>
-			<scope>runtime</scope>
-	</dependency>
-	  
-        <dependency>
-            <groupId>org.apache.tiles</groupId>
-            <artifactId>tiles-jsp</artifactId>
-            <version>${apache-tiles-version}</version>
-        </dependency>
-      
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-api</artifactId>
+			<version>${tiles-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-core</artifactId>
+			<version>${tiles-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-jsp</artifactId>
+			<version>${tiles-version}</version>
+		</dependency>
+		<!-- tiles eee -->
+		
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.5.8</version>
+		</dependency>
+
 	</dependencies>
 	<properties>
 		<jetty-version>6.1.7</jetty-version>
-		<spring-version>2.5</spring-version>
+		<spring-version>3.0.2.RELEASE</spring-version>
 		<spring-ext-version>2.0.7</spring-ext-version>
 		<hsql-version>1.8.0.7</hsql-version>
-		<log4j-version>1.2.14</log4j-version>
 		<c3p0-version>0.9.1.1</c3p0-version>
 		<ehcache-version>1.2.4</ehcache-version>
 		<hibernate-version>3.2.4.sp1</hibernate-version>
@@ -202,7 +208,6 @@
 		<geronimo-spec-version>1.0.1B-rc4</geronimo-spec-version>
 		<servlet-version>2.5</servlet-version>
 		<mysql-version>5.0.5</mysql-version>
-		<struts-tiles-version>1.3.9</struts-tiles-version>
-		<apache-tiles-version>2.0.6</apache-tiles-version> 
+		<tiles-version>2.2.1</tiles-version>
 	</properties>
 </project>
