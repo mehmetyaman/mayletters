@@ -4,7 +4,7 @@
         <configExtension>xml</configExtension>
     </configExtensions>
     <configs>
-        <config>src/main/webapp/WEB-INF/springmvc-servlet.xml</config>
+        <config>src/main/webapp/WEB-INF/dispatcher-servlet.xml</config>
         <config>src/main/webapp/WEB-INF/applicationContext.xml</config>
     </configs>
     <configSets>
@@ -14,7 +14,7 @@
             <incomplete>false</incomplete>
             <configs>
                 <config>src/main/webapp/WEB-INF/applicationContext.xml</config>
-                <config>src/main/webapp/WEB-INF/springmvc-servlet.xml</config>                
+                <config>src/main/webapp/WEB-INF/dispatcher-servlet.xml</config>                
             </configs>
         </configSet>
     </configSets>
