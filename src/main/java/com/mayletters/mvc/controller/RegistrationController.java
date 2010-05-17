@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class RegistrationController{
 	
-	@RequestMapping("/register.jsp")
+	@RequestMapping("/register.do")
 	public String redirect()
 	{
-		String redirect="register";
+		String redirect="/public/register";
 		return redirect;
 	}
 
