@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class OfficeController {
 
-	@RequestMapping("/office.jsp")
+	@RequestMapping("/office.do")
 	public String redirect()
 	{
 		return "office";

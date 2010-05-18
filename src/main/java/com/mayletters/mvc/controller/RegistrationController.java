@@ -10,8 +10,7 @@ public class RegistrationController{
 	@RequestMapping("/register.do")
 	public String redirect()
 	{
-		String redirect="/public/register";
-		return redirect;
+		return "/public/register";
 	}
 
 
