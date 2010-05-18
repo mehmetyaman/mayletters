@@ -11,7 +11,7 @@
 </head>
 <body>
 <center>
-<form action="/register.erm">
+<form action="<%=request.getContextPath()%>/register.do">
 <table class="group"><tbody>
 <tr><th colspan="2"  class="group"><fmt:message key="label.register"/></th></tr>
 <tr><td><fmt:message key="label.username"/></td><td><input type="text" value="User" name="username" id="username"/></td></tr>
