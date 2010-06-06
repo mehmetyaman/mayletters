@@ -32,19 +32,13 @@ public class RegistrationController {
 		
 		List<User> users = userDao.listByUserName(user.getUserName());
 		
-		if(users !=null && users.size()>0){
-			return "/public/register";
-		} else {
-			userDao.persist(user);
-		}
-
-		
 		if(result.hasErrors()){
 			// try again
 			return "/public/register";
 		} else {
 			// success
-			return "/public/main";
+			// TODO users list will be bind here 
+			return "main";
 		}
 		
 
