@@ -11,6 +11,8 @@ import org.apache.commons.logging.LogFactory;
 
 public abstract class BaseDAO implements Serializable {
 
+	private static final long serialVersionUID = 2746316045807237905L;
+
 	protected static final Log LOG = LogFactory.getLog(BaseDAO.class);
 
 	protected Class targetEntity;
