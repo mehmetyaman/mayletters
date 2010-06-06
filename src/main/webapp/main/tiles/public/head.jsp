@@ -10,12 +10,11 @@
 <title></title>
 </head>
 <body>
-<table width="100%"><tbody>
-<tr><td align="left"  width="25%"><img src="<%=request.getContextPath()%>/layouts/images/zarf1.jpg"/></td><td align="left" width="75%"><fmt:message 
-
-key="label.header"/> </td>
+<table width="100%">
+<tr>
+<td align="left"  width="25%"><img src='<%=request.getContextPath()%>/layouts/images/zarf1.jpg' /></td>
+<td align="left" width="75%"><fmt:message key="label.header"/></td>
 </tr>
-</tbody>
 </table>
 </body>
 </html>
