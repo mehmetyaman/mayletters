@@ -3,18 +3,22 @@
  */
 package com.mayletters.domain;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table (name="users",schema="mayletters")
 public class User extends AbsEntity {
 
 	private static final long serialVersionUID = -6992730305266098196L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	public Long id;
 
 	private String name;
@@ -30,6 +34,8 @@ public class User extends AbsEntity {
 	private String userName;
 
 	private String password;
+	
+	private Date birthDate;
 
 	@Override
 	public String toString() {
@@ -113,6 +119,20 @@ public class User extends AbsEntity {
 	 */
 	public String getPassword() {
 		return password;
+	}
+
+	/**
+	 * @param birthDate the birthDate to set
+	 */
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	/**
+	 * @return the birthDate
+	 */
+	public Date getBirthDate() {
+		return birthDate;
 	}
 
 
