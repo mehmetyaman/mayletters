@@ -3,7 +3,8 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
 <tiles-definitions>
-
+  <!-- Components -->
+ 
   <!-- Pages -->
   <definition name="head" template="/public/head.jsp"/>
   <definition name="foot" template="/public/foot.jsp"/>
@@ -11,26 +12,28 @@
   
   <!-- Main -->
   <definition name="public" template="/main/public.jsp">
-    <put-attribute name="head-position" value="head" />
-    <put-attribute name="right-nav-position" value="/public/rightnav.jsp" />
-    <put-attribute name="body-position" value="/public/body.jsp" />
-    <put-attribute name="foot-position" value="foot" />
+    <put-attribute name="head-position" value="head"/>
+    <put-attribute name="right-nav-position" value="/public/rightnav.jsp"/>
+    <put-attribute name="body-position" value="/public/body.jsp"/>
+    <put-attribute name="foot-position" value="foot"/>
   </definition>
  
   <definition name="register" extends="public">
  	 <put-attribute name="body-position" value="/public/register.jsp"/>  
   </definition>
+ 
+ 
+  <definition name="usermain" template="/main.jsp">
+    <put-attribute name="head-position" value="head"/>
+    <put-attribute name="left-nav-position" value="left-nav"/>
+    <put-attribute name="body-position" value="/user/body.jsp"/>
+    <put-attribute name="foot-position" value="foot"/>
+  </definition>
   
-  
-   <definition name="adminmain" extends="main">
+ <definition name="adminmain" extends="usermain">
     <put-attribute name="left-nav-position" value="/admin/leftnav.jsp"/>
     <put-attribute name="body-position" value="/admin/body.jsp"/>
   </definition>
-  
-  <!-- Components -->
  
-  <definition name="main" template="/main.jsp">
-    <put-attribute name="head" value="/user/body.jsp"/>
-  </definition>
-  
+ 
 </tiles-definitions>
