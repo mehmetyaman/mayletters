@@ -21,7 +21,7 @@ public class UserDao extends BaseDAO implements IUserDAO {
 	@SuppressWarnings("unchecked")
 	public List<User> listByBirtDate(Date date) {
 		return (List<User>) appManager.createQuery(
-				"SELECT p FROM User p WHERE p.dataNascita = :ident")
+				"SELECT p FROM User p WHERE p.birthDate = :ident")
 				.setParameter("ident", date).getResultList();
 
 	}
@@ -30,17 +30,17 @@ public class UserDao extends BaseDAO implements IUserDAO {
 	public List<User> listByName(String name) {
 
 		return (List<User>) appManager.createQuery(
-				"SELECT p FROM User p WHERE p.nome = :ident").setParameter(
+				"SELECT p FROM User p WHERE p.name = :ident").setParameter(
 				"ident", name).getResultList();
 
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<User> listByUserName(String name) {
+	public List<User> listByUserName(String userName) {
 
 		return (List<User>) appManager.createQuery(
-				"SELECT p FROM User p WHERE p.username = :ident").setParameter(
-				"ident", name).getResultList();
+				"SELECT p FROM User p WHERE p.userName = :ident").setParameter(
+				"ident", userName).getResultList();
 
 	}
 
