@@ -20,9 +20,9 @@ $().ready(function() {
 	// validate signup form on keyup and submit
 	$("#signupForm").validate({
 		rules: {
-			firstname: "required",
-			lastname: "required",
-			username: {
+			name: "required",
+			lastName: "required",
+			userName: {
 				required: true,
 				minlength: 2
 			},
@@ -42,9 +42,9 @@ $().ready(function() {
 			agree: "required"
 		},
 		messages: {
-			firstname: "Please enter your firstname",
-			lastname: "Please enter your lastname",
-			username: {
+			name: "Please enter your firstname",
+			lastName: "Please enter your lastname",
+			userName: {
 				required: "Please enter a username",
 				minlength: "Your username must consist of at least 2 characters"
 			},
@@ -63,9 +63,9 @@ $().ready(function() {
 	});
 	
 	// propose username by combining first- and lastname
-	$("#username").focus(function() {
+	$("#userName").focus(function() {
 		var firstname = $("#firstname").val();
-		var lastname = $("#lastname").val();
+		var lastname = $("#lastName").val();
 		if(firstname && lastname && !this.value) {
 			this.value = firstname + "." + lastname;
 		}
@@ -80,22 +80,22 @@ $().ready(function() {
 </head>
 <body>
 <center>
-<form action="<%=request.getContextPath()%>/register.do" id="signupForm" method="get">
+<form action="<%=request.getContextPath()%>/register/register.do" id="signupForm" method="post">
 <fieldset>
 		<legend>Validating a complete form</legend>
 
 		<p>
-			<label for="firstname">Firstname</label>
-			<input id="firstname" name="firstname" />
+			<label for="name">Name</label>
+			<input id="name" name="name" />
 		</p>
 		<p>
-			<label for="lastname">Lastname</label>
-			<input id="lastname" name="lastname" />
+			<label for="lastName">Lastname</label>
+			<input id="lastName" name="lastName" />
 		</p>
 
 		<p>
-			<label for="username">Username</label>
-			<input id="username" name="username" />
+			<label for="userName">Username</label>
+			<input id="userName" name="userName" />
 		</p>
 		<p>
 			<label for="password">Password</label>
