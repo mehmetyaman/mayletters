@@ -3,27 +3,22 @@
  */
 package com.mayletters.domain;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.hibernate.annotations.Entity;
-import org.hibernate.annotations.Table;
-
-/**
- * @author aykutt
- * 
- */
 @Entity
-@Table (appliesTo = "users")
-public class User extends BaseEntity {
-	
+public class User extends AbsEntity {
+
 	private static final long serialVersionUID = -6992730305266098196L;
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.TABLE)
+	public Long id;
+
 	private String name;
+
 	private String lastName;
 
 	private String email;
@@ -32,7 +27,9 @@ public class User extends BaseEntity {
 
 	private Address address;
 
-	private List<Role> roles;
+	private String userName;
+
+	private String password;
 
 	@Override
 	public String toString() {
@@ -43,7 +40,7 @@ public class User extends BaseEntity {
 	public boolean equals(Object o) {
 		if (o instanceof User) {
 			User user = (User) o;
-			return this.getId().equals(user.getId());
+			return this.getId() == user.getId();
 		}
 		return false;
 	}
@@ -80,27 +77,6 @@ public class User extends BaseEntity {
 		this.name = name;
 	}
 
-	@Override
-	public List<String> validate() {
-		List<String> errors = new ArrayList<String>();
-		if (this.name == null || this.name.trim().equals("")) {
-			errors.add("Ýsim bos olamaz");
-		}
-		if (this.lastName == null || this.lastName.trim().equals("")) {
-			errors.add("Soyisim bos olamaz");
-		}
-		// Burada cok dilli destegi nasýl saðlarýz ??
-		return errors;
-	}
-
-	public List<Role> getRoles() {
-		return roles;
-	}
-
-	public void setRoles(List<Role> roles) {
-		this.roles = roles;
-	}
-
 	public Address getAddress() {
 		return address;
 	}
@@ -108,5 +84,36 @@ public class User extends BaseEntity {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+
+	/**
+	 * @param userName
+	 *            the userName to set
+	 */
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	/**
+	 * @return the userName
+	 */
+	public String getUserName() {
+		return userName;
+	}
+
+	/**
+	 * @param password
+	 *            the password to set
+	 */
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	/**
+	 * @return the password
+	 */
+	public String getPassword() {
+		return password;
+	}
+
 
 }

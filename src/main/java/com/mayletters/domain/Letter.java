@@ -15,7 +15,7 @@ import org.hibernate.annotations.Table;
  */
 @Entity
 @Table (appliesTo = "letters")
-public class Letter extends BaseEntity {
+public class Letter extends AbsEntity {
 	
 	private static final long serialVersionUID = -2049382970256543286L;
 
@@ -45,7 +45,7 @@ public class Letter extends BaseEntity {
 	
 	public Letter(){
 		this.letterState=LETTER_STATE.CREATED;
-		this.setDescription("");
+//		this.setDescription("");
 	}
 	
 	/* (non-Javadoc)

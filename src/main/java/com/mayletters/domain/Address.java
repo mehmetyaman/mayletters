@@ -3,10 +3,9 @@
  */
 package com.mayletters.domain;
 
-import java.util.List;
-
 import org.hibernate.annotations.Entity;
 import org.hibernate.annotations.Table;
+
 
 /**
  * @author aykutt
@@ -14,7 +13,7 @@ import org.hibernate.annotations.Table;
  */
 @Entity
 @Table (appliesTo = "addresses")
-public class Address extends BaseEntity {
+public class Address extends AbsEntity {
 
 	private static final long serialVersionUID = 1345475383444998054L;
 
@@ -51,16 +50,6 @@ public class Address extends BaseEntity {
 	public boolean equals(Object o) {
 		// if(o )
 		return false;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.may.mektup.model.BaseEntity#validate()
-	 */
-	@Override
-	public List<String> validate() {
-		return null;
 	}
 
 	public String getAddressLine1() {

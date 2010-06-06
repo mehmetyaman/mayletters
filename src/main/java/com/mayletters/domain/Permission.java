@@ -13,13 +13,14 @@ import org.hibernate.annotations.Entity;
 import org.hibernate.annotations.Table;
 
 
+
 /**
  * @author aykutt
  * Tests
  */
 @Entity
 @Table (appliesTo="permissions")
-public class Permission extends BaseEntity {
+public class Permission extends AbsEntity {
 
 	private static final long serialVersionUID = -8049671310549713416L;
 

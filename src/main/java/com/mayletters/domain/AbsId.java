@@ -13,7 +13,7 @@ public abstract class AbsId implements Serializable {
 	private static final long serialVersionUID = -8971947123114466772L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	protected Long id;
 
 	public Long getId() {

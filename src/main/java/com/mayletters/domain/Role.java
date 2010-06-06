@@ -12,13 +12,15 @@ import javax.persistence.Id;
 import org.hibernate.annotations.Entity;
 import org.hibernate.annotations.Table;
 
+
+
 /**
  * @author aykutt
  * 
  */
 @Entity
-@Table (appliesTo = "roles")
-public class Role extends BaseEntity {
+@Table ( appliesTo= "roles")
+public class Role extends AbsEntity {
 
 	private static final long serialVersionUID = -5569459993422958824L;
 
