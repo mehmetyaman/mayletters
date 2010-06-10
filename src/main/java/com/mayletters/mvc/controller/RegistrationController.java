@@ -32,13 +32,16 @@ public class RegistrationController {
 		
 		List<User> users = userDao.listByUserName(user.getUserName());
 		
+		
+		String redirect="main";
+		
 		if(result.hasErrors()){
 			// try again
 			return "/public/register";
 		} else {
 			// success
 			// TODO users list will be bind here 
-			return "main";
+			return redirect;
 		}
 		
 
