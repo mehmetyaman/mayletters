@@ -6,30 +6,29 @@
 	  <!-- Pages -->
 	  <definition name="head" template="/main/tiles/public/head.jsp"/>
 	  <definition name="foot" template="/main/tiles/public/foot.jsp"/>
-	  <definition name="left-nav" template="/main/tiles/user/leftnav.jsp"/>
-	  
+	  <definition name="right-nav" template="/main/tiles/public/rightnav.jsp"/>
+	  <definition name="body" template="/main/tiles/public/body.jsp"/>
 	  <!-- Main -->
 	  <definition name="public" template="/main/tiles/main/public.jsp">
-	    <put-attribute name="head-position" value="head" type="definition"/>
-	    <put-attribute name="right-nav-position" value="/main/tiles/public/rightnav.jsp"/>
-	    <put-attribute name="body-position" value="/main/tiles/public/body.jsp"/>
-	    <put-attribute name="foot-position" value="foot" type="definition"/>
+	    <put-attribute name="head" value="head" type="definition"/>
+	    <put-attribute name="right-nav" value="/main/tiles/public/rightnav.jsp"/>
+	    <put-attribute name="body" value="/main/tiles/public/body.jsp"/>
 	  </definition>
 	 
 	  <definition name="register" extends="public">
-	 	 <put-attribute name="body-position" value="/main/tiles/public/register.jsp"/>  
+	 	 <put-attribute name="body" value="/main/tiles/public/register.jsp"/>  
 	  </definition>
 	 
 	  <definition name="usermain" template="/main/tiles/main.jsp">
-	    <put-attribute name="head-position" value="/main/tiles/public/head.jsp"/>
-	    <put-attribute name="left-nav-position" value="leftnav"/>
-	    <put-attribute name="body-position" value="body"/>
-	    <put-attribute name="foot-position" value="foot"/>
+	    <put-attribute name="head" value="/main/tiles/public/head.jsp"/>
+	    <put-attribute name="left-nav" value="leftnav"/>
+	    <put-attribute name="body" value="body"/>
+	    <put-attribute name="foot" value="foot"/>
 	  </definition>
 	  
 	 <definition name="adminmain" extends="usermain">
-	    <put-attribute name="left-nav-position" value="/admin/leftnav.jsp"/>
-	    <put-attribute name="body-position" value="/admin/body.jsp"/>
+	    <put-attribute name="left-nav" value="/admin/leftnav.jsp"/>
+	    <put-attribute name="body" value="/admin/body.jsp"/>
 	  </definition>
 	 
 	</tiles-definitions>
