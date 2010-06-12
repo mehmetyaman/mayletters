@@ -34,7 +34,12 @@
 	<bean id="appManager" class="com.mayletters.service.AppManager">
         <constructor-arg index="0" value="mayletters_persistence"></constructor-arg>
     </bean>
-	
+	 <bean id="tilesViewResolver"
+          class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView" />
+    </bean>
+    
+    <!--
 
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
@@ -45,7 +50,7 @@
 		</property>
 	</bean>
 
-	<!-- tiles eee -->
+	--><!-- tiles eee -->
 
 	<!-- RsourceBundle message -->
 	<bean id="messageSource"
