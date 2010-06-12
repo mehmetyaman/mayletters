@@ -14,20 +14,20 @@
     
       <tr>
         <td colspan="2" height="30" class="bottomline linecolor">
-          <tiles:insertAttribute name="head-position"/>
+          <tiles:insertDefinition name="head"/>
         </td>
       </tr>
       <tr>
         <td  width="150" height="450" valign="top"  class="rightline linecolor">
-          <tiles:insertAttribute name="left-nav-position"/>
+          <tiles:insertDefinition name="left-nav"/>
         </td>
         <td width="550" valign="top">
-          <tiles:insertAttribute name="body-position"/>
+          <tiles:insertDefinition name="body"/>
         </td>
       </tr>
       <tr>
         <td colspan="2" height="30" align="center">
-          <tiles:insertAttribute name="foot-position"/>
+          <tiles:insertDefinition name="foot"/>
         </td>
       </tr>
 	  

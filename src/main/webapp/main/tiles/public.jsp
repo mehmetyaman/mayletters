@@ -10,20 +10,20 @@
     <table border="0" cellpadding="2" cellspacing="2" align="center">
       <tr>
         <td colspan="2" height="30" class="bottomline linecolor">
-          <tiles:insertDefinition name="head"/>
+          <tiles:insertAttribute name="head"/>
         </td>
       </tr>
       <tr>
       	<td width="550" valign="top">
-          <tiles:insertDefinition name="body"/>
+          <tiles:insertAttribute name="body"/>
         </td>
         <td  width="150" height="500" valign="top"  class="leftline linecolor">
-          <tiles:insertDefinition name="right-nav"/>
+          <tiles:insertAttribute name="right-nav"/>
         </td>
       </tr>
       <tr>
         <td colspan="2" height="30" align="center">
-          <tiles:insertDefinition name="foot"/>
+          <tiles:insertAttribute name="foot"/>
         </td>
       </tr>
     </table>
