@@ -20,7 +20,7 @@ public class RegistrationController {
 
 	@RequestMapping(value = "/register/showform.do")
 	public String showForm() {
-		return "/public/register";
+		return "register";
 	}
 
 	@RequestMapping(value = "/register/register.do", method = RequestMethod.POST)
