@@ -22,28 +22,22 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
+					<source>1.6</source>
+					<target>1.6</target>
 				</configuration>
 			</plugin>
 			<plugin>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>install</phase>
-						<goals>
-							<goal>run</goal>
-						</goals>
-						<configuration>
-							<tasks>
-								<echo>Starting hsqldb server on port 9002</echo>
-								<java classname="org.hsqldb.Server" dir="C:\workspace-sts-2.3.2/mayletters/db"
-									fork="true" failonerror="true" maxmemory="128m"
-									classpathref="maven.compile.classpath" />
-							</tasks>
-						</configuration>
-					</execution>
-				</executions>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.0</version>
+				<!-- <configuration> -->
+				<!-- <webResources> -->
+				<!-- <resource> -->
+				<!-- this is relative to the pom.xml directory -->
+				<!-- <directory>WebContent/WEB-INF/web.xml</directory> -->
+				<!-- </resource> -->
+				<!-- </webResources> -->
+				<!-- </configuration> -->
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -161,6 +155,11 @@
 			<version>${hsql-version}</version>
 		</dependency>
 		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.0.60</version>
+		</dependency>
+		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql-version}</version>
@@ -188,11 +187,23 @@
 			<version>${tiles-version}</version>
 		</dependency>
 		<!-- tiles eee -->
-		
+
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.5.8</version>
+		</dependency>
+
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
 		</dependency>
 
 	</dependencies>
