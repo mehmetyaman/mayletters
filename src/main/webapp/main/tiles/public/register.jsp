@@ -7,8 +7,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<script type="text/javascript"  src="../js/jquery.js"></script>
-<script type="text/javascript" src="../js/jquery.validate.js"></script>
+<script type="text/javascript"  src="<%=request.getContextPath()%>/js/jquery.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery.validate.js"></script>
 	
 <script type="text/javascript">
 

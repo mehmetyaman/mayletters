@@ -1,13 +1,12 @@
 package com.mayletters.mvc.controller;
 
-import java.util.List;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.mayletters.domain.User;
 import com.mayletters.service.dao.UserDao;
@@ -24,24 +23,23 @@ public class RegistrationController {
 	}
 
 	@RequestMapping(value = "/register/register.do", method = RequestMethod.POST)
-	public String register(@ModelAttribute("user") User user,  BindingResult result ) {
+	public ModelAndView register(@ModelAttribute("user") User user,  BindingResult result ) {
 
 		validator.validate(user, result);
-		
 		userDao.persist(user);
-		
-		List<User> users = userDao.listByUserName(user.getUserName());
-		
-		
-		String redirect="main";
+		ModelAndView mav = new ModelAndView();
 		
 		if(result.hasErrors()){
 			// try again
-			return "/public/register";
+			return mav;
 		} else {
 			// success
 			// TODO users list will be bind here 
-			return redirect;
+			
+	        mav.setViewName("public");
+	        mav.addObject("user", user);
+	        mav.addObject("message", "Hello World From Phuong!");
+	        return mav;
 		}
 		
 

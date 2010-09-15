@@ -8,12 +8,13 @@
 	  <definition name="foot" template="/main/tiles/public/foot.jsp"/>
 	  <definition name="right-nav" template="/main/tiles/public/rightnav.jsp"/>
 	  <definition name="body" template="/main/tiles/public/body.jsp"/>
+	  
 	  <!-- Main -->
 	  <definition name="public" template="/main/tiles/public.jsp">
-	    <put-attribute name="head" value="head" type="definition"/>
-	    <put-attribute name="right-nav"  value="right-nav" type="definition"/>
-	    <put-attribute name="body" value="body" type="definition"/>
-	    <put-attribute name="foot" value="foot" type="definition"/>
+	    <put-attribute name="head" type="definition" />
+	    <put-attribute name="right-nav"  type="definition"/>
+	    <put-attribute name="body" type="definition"/>
+	    <put-attribute name="foot" type="definition"/>
 	  </definition>
 	 
 	  <definition name="register" extends="public">

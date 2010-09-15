@@ -14,7 +14,7 @@
     
       <tr>
         <td colspan="2" height="30" class="bottomline linecolor">
-          <tiles:insertDefinition name="head"/>
+          <tiles:insertDefinition name="head" />
         </td>
       </tr>
       <tr>
