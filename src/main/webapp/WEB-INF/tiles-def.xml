@@ -1,36 +1,41 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
-	<tiles-definitions>
-	  <!-- Components -->
-	 
-	  <!-- Pages -->
-	  <definition name="head" template="/main/tiles/public/head.jsp"/>
-	  <definition name="foot" template="/main/tiles/public/foot.jsp"/>
-	  <definition name="right-nav" template="/main/tiles/public/rightnav.jsp"/>
-	  <definition name="body" template="/main/tiles/public/body.jsp"/>
-	  
-	  <!-- Main -->
-	  <definition name="public" template="/main/tiles/public.jsp">
-	    <put-attribute name="head" type="definition" />
-	    <put-attribute name="right-nav"  type="definition"/>
-	    <put-attribute name="body" type="definition"/>
-	    <put-attribute name="foot" type="definition"/>
-	  </definition>
-	 
-	  <definition name="register" extends="public">
-	 	 <put-attribute name="body" value="/main/tiles/public/register.jsp"/>  
-	  </definition>
-	 
-	  <definition name="usermain" template="/main/tiles/main.jsp">
-	    <put-attribute name="head" value="/main/tiles/public/head.jsp"/>
-	    <put-attribute name="left-nav" value="leftnav"/>
-	    <put-attribute name="body" value="body"/>
-	    <put-attribute name="foot" value="foot"/>
-	  </definition>
-	  
-	 <definition name="adminmain" extends="usermain">
-	    <put-attribute name="left-nav" value="/admin/leftnav.jsp"/>
-	    <put-attribute name="body" value="/admin/body.jsp"/>
-	  </definition>
-	 
-	</tiles-definitions>
+<tiles-definitions>
+	<!-- Components -->
+
+	<!-- Pages -->
+	<definition name="head" template="/main/tiles/public/head.jsp" />
+	<definition name="foot" template="/main/tiles/public/foot.jsp" />
+	<definition name="rightnav" template="/main/tiles/public/rightnav.jsp" />
+	<definition name="body" template="/main/tiles/public/body.jsp" />
+	<definition name="userleftnav" template="/main/tiles/user/leftnav.jsp" />
+
+	<!-- Main -->
+	<definition name="public" template="/main/tiles/public.jsp">
+		<put-attribute name="head" type="definition" />
+		<put-attribute name="rightnav" type="definition" />
+		<put-attribute name="body" type="definition" />
+		<put-attribute name="foot" type="definition" />
+	</definition>
+
+	<!-- User Main -->
+	<definition name="register" extends="public">
+		<put-attribute name="body" value="/main/tiles/public/register.jsp" />
+	</definition>
+
+	<!-- User Main -->
+	<definition name="usermain" template="/main/tiles/main.jsp">
+		<put-attribute name="head" value="/main/tiles/public/head.jsp" />
+		<put-attribute name="userleftnav" type="definition" />
+		<put-attribute name="rightnav" type="definition" />
+		<put-attribute name="body" type="definition" />
+		<put-attribute name="foot" type="definition" />
+	</definition>
+
+	<!-- User Main -->
+	<definition name="adminmain" extends="usermain">
+		<put-attribute name="leftnav" value="/admin/leftnav.jsp" />
+		<put-attribute name="body" value="/admin/body.jsp" />
+	</definition>
+
+</tiles-definitions>

@@ -23,9 +23,14 @@
 	<bean name="/login/register.jsp" id="registrationController" class="com.mayletters.mvc.controller.RegistrationController">
 		<property name="validator" ref="registrationValidator"/>
 		<property name="userDao" ref="userDao" />
+		<property name="rightDao" ref="rightDao" />
 	</bean>
 	
 	<bean name="userDao" class="com.mayletters.service.dao.UserDao" >
+	 <property name="appManager" ref="appManager"/>
+	</bean>
+	
+	<bean name="rightDao" class="com.mayletters.service.dao.RightDao" >
 	 <property name="appManager" ref="appManager"/>
 	</bean>
 

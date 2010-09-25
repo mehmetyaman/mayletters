@@ -1,24 +1,27 @@
-/**
- * 
- */
 package com.mayletters.domain;
 
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table (name="users",schema="mayletters")
+@Table(name = "users", schema = "mayletters")
 public class User extends AbsEntity {
 
 	private static final long serialVersionUID = -6992730305266098196L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@SequenceGenerator(name = "users_gen", sequenceName = "users_seq")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_gen")
 	public Long id;
 
 	private String name;
@@ -34,8 +37,11 @@ public class User extends AbsEntity {
 	private String userName;
 
 	private String password;
-	
+
 	private Date birthDate;
+	
+	@OneToMany(targetEntity=Right.class, cascade=CascadeType.ALL, mappedBy="user")
+	private Collection<Right> rights;
 
 	@Override
 	public String toString() {
@@ -122,7 +128,8 @@ public class User extends AbsEntity {
 	}
 
 	/**
-	 * @param birthDate the birthDate to set
+	 * @param birthDate
+	 *            the birthDate to set
 	 */
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
@@ -135,5 +142,12 @@ public class User extends AbsEntity {
 		return birthDate;
 	}
 
+	public void setRights(List<Right> rights) {
+		this.rights = rights;
+	}
+
+	public Collection<Right> getRights() {
+		return rights;
+	}
 
 }

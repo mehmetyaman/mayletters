@@ -18,7 +18,7 @@
           <tiles:insertDefinition name="body"/>
         </td>
         <td  width="150" height="500" valign="top"  class="leftline linecolor">
-          <tiles:insertDefinition name="right-nav"/>
+          <tiles:insertDefinition name="rightnav"/>
         </td>
       </tr>
       <tr>

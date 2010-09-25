@@ -83,34 +83,34 @@ $().ready(function() {
 
 		<p>
 			<label for="name">Name</label>
-			<input id="name" name="name" />
+			<input id="name" name="name" value="john"/>
 		</p>
 		<p>
 			<label for="lastName">Lastname</label>
-			<input id="lastName" name="lastName" />
+			<input id="lastName" name="lastName" value="doe" />
 		</p>
 
 		<p>
 			<label for="userName">Username</label>
-			<input id="userName" name="userName" />
+			<input id="userName" name="userName" value="john doe"/>
 		</p>
 		<p>
 			<label for="password">Password</label>
-			<input id="password" name="password" type="password" />
+			<input id="password" name="password" type="password" value="090909"/>
 		</p>
 
 		<p>
 			<label for="confirm_password">Confirm password</label>
-			<input id="confirm_password" name="confirm_password" type="password" />
+			<input id="confirm_password" name="confirm_password" type="password" value="090909" />
 		</p>
 		<p>
 			<label for="email">Email</label>
-			<input id="email" name="email" />
+			<input id="email" name="email" value="johndoe@doe.com"/>
 		</p>
 
 		<p>
 			<label for="agree">Please agree to our policy</label>
-			<input type="checkbox" class="checkbox" id="agree" name="agree" />
+			<input type="checkbox" class="checkbox" id="agree" name="agree" checked="checked"/>
 		</p>
 
 
