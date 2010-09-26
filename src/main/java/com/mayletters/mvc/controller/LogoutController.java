@@ -15,7 +15,7 @@ public class LogoutController {
 
 	@RequestMapping(value = "/logout.do")
 	protected String logout() throws Exception {
-        System.out.println("here 3");
+		
 	    return "public";
 	}
 

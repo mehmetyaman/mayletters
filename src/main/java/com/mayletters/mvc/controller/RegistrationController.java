@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.mayletters.domain.Right;
 import com.mayletters.domain.User;
+import com.mayletters.service.dao.RightDao;
 import com.mayletters.service.dao.UserDao;
 
 @Controller
@@ -21,7 +22,7 @@ public class RegistrationController {
 	private Validator validator;
 	
 	private UserDao userDao;
-	private com.mayletters.service.dao.RightDao rightDao;
+	private RightDao rightDao;
 
 	@RequestMapping(value = "/register/showform.do")
 	public String showForm() {
@@ -71,11 +72,11 @@ public class RegistrationController {
 		this.userDao = userDao;
 	}
 
-	public void setRightDao(com.mayletters.service.dao.RightDao rightDao) {
+	public void setRightDao(RightDao rightDao) {
 		this.rightDao = rightDao;
 	}
 
-	public com.mayletters.service.dao.RightDao getRightDao() {
+	public RightDao getRightDao() {
 		return rightDao;
 	}
 
