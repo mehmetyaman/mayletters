@@ -1,5 +1,7 @@
 package com.mayletters.mvc.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
@@ -31,25 +33,16 @@ public class RegistrationController {
 	public ModelAndView register(@ModelAttribute("user") User user,  BindingResult result ) {
 
 		validator.validate(user, result);
-		Right r = new Right();
 		
-		r.setUser(user);
-		r.setUserRight(com.mayletters.util.Right.WRITE_CARD);
+		ArrayList<Right> rights = new ArrayList<Right>();
 		
-		Right r1 = new Right();
+		rights.add(new Right(user,com.mayletters.util.Right.ADMIN));
+		rights.add(new Right(user,com.mayletters.util.Right.WRITE_CARD));
+		rights.add(new Right(user,com.mayletters.util.Right.WRITE_MAIL));
 		
-		r1.setUser(user);
-		r1.setUserRight(com.mayletters.util.Right.WRITE_MAIL);
-		
-		Right r2 = new Right();
-		
-		r2.setUser(user);
-		r2.setUserRight(com.mayletters.util.Right.ADMIN);
+		user.setRights(rights);
 		
 		userDao.persist(user);
-		rightDao.persist(r2);
-		rightDao.persist(r1);
-		rightDao.persist(r);
 		
 		ModelAndView mav = new ModelAndView();
 		

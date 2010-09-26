@@ -34,6 +34,12 @@ public class Right extends AbsEntity {
 		return user;
 	}
 
+	public Right(User user, com.mayletters.util.Right userRight) {
+		super();
+		this.user = user;
+		this.userRight = userRight;
+	}
+
 	public void setUserRight(com.mayletters.util.Right userRight) {
 		this.userRight = userRight;
 	}
