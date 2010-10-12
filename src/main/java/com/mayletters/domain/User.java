@@ -47,7 +47,7 @@ public class User extends AbsEntity {
 
 	private Date birthDate;
 
-	@OneToMany(targetEntity = Role.class, cascade = CascadeType.ALL, mappedBy = "user")
+	@OneToMany(cascade = CascadeType.ALL)
 	private Collection<Role> roles;
 
 	@Override
