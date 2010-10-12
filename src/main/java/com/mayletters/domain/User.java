@@ -2,14 +2,15 @@ package com.mayletters.domain;
 
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -32,16 +33,22 @@ public class User extends AbsEntity {
 
 	private Boolean active;
 
+	@OneToOne(targetEntity = Address.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "address_id", unique = true, nullable = true, insertable = true, updatable = true)
 	private Address address;
 
 	private String userName;
 
 	private String password;
 
-	private Date birthDate;
+	private String phoneNumber;
 	
-	@OneToMany(targetEntity=Right.class, cascade=CascadeType.ALL, mappedBy="user")
-	private Collection<Right> rights;
+	private String faxNumber;
+
+	private Date birthDate;
+
+	@OneToMany(targetEntity = Role.class, cascade = CascadeType.ALL, mappedBy = "user")
+	private Collection<Role> roles;
 
 	@Override
 	public String toString() {
@@ -142,12 +149,28 @@ public class User extends AbsEntity {
 		return birthDate;
 	}
 
-	public void setRights(List<Right> rights) {
-		this.rights = rights;
+	public void setRoles(Collection<Role> roles) {
+		this.roles = roles;
 	}
 
-	public Collection<Right> getRights() {
-		return rights;
+	public Collection<Role> getRoles() {
+		return roles;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setFaxNumber(String faxNumber) {
+		this.faxNumber = faxNumber;
+	}
+
+	public String getFaxNumber() {
+		return faxNumber;
 	}
 
 }

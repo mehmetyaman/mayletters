@@ -3,32 +3,41 @@
  */
 package com.mayletters.domain;
 
+import java.util.Collection;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import org.hibernate.annotations.Entity;
-import org.hibernate.annotations.Table;
-
-
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 /**
  * @author aykutt
  * 
  */
 @Entity
-@Table ( appliesTo= "roles")
+@Table(name = "roles", schema = "mayletters")
 public class Role extends AbsEntity {
 
 	private static final long serialVersionUID = -5569459993422958824L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long roleId;
+	@SequenceGenerator(name = "roles_gen", sequenceName = "roles_seq")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "roles_gen")
+	private Long id;
 
-	private List<Permission> permissions;
+	@ManyToOne(optional = false)
+	@JoinColumn(name = "user_id" ,nullable=false, updatable = false)
+	private User user;
+	
+	@OneToMany(targetEntity=Right.class, cascade=CascadeType.ALL, mappedBy="role")
+	private Collection<Right> rights;
 
 	/*
 	 * (non-Javadoc)
@@ -39,7 +48,7 @@ public class Role extends AbsEntity {
 	public boolean equals(Object o) {
 		if (o instanceof Role) {
 			Role role = (Role) o;
-			return this.getRoleId().equals(role.getRoleId());
+			return this.getId().equals(role.getId());
 		}
 		return false;
 	}
@@ -51,24 +60,24 @@ public class Role extends AbsEntity {
 	 */
 	@Override
 	public List<String> validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Long getRoleId() {
-		return roleId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public void setRoleId(Long roleId) {
-		this.roleId = roleId;
+	public User getUser() {
+		return user;
 	}
 
-	public List<Permission> getPermissions() {
-		return permissions;
+	public void setRights(Collection<Right> rights) {
+		this.rights = rights;
 	}
 
-	public void setPermissions(List<Permission> permissions) {
-		this.permissions = permissions;
+	public Collection<Right> getRights() {
+		return rights;
 	}
+
 
 }

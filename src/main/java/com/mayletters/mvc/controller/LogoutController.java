@@ -5,18 +5,18 @@ package com.mayletters.mvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
-/**
- * @author aykutt
- *
- */
 @Controller
 public class LogoutController {
 
 	@RequestMapping(value = "/logout.do")
-	protected String logout() throws Exception {
-		
-	    return "public";
+	protected ModelAndView logout() throws Exception {
+		ModelAndView mav = new ModelAndView();
+
+		mav.setViewName("usermain");
+		mav.addObject("user", null);
+		return mav;
 	}
 
 }

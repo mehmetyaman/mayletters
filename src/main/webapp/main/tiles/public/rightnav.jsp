@@ -22,7 +22,7 @@
 	</c:when>
 
 	<c:otherwise>
-		<form name="login" action="<%=request.getContextPath()%>/login.erm">
+		<form name="login" action="<%=request.getContextPath()%>/login.do">
 		<table class="group">
 			<tbody>
 				<tr>

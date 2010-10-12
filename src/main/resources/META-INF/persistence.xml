@@ -7,7 +7,9 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		
 		<class>com.mayletters.domain.User</class>
+		<class>com.mayletters.domain.Role</class>
 		<class>com.mayletters.domain.Right</class>
+		<class>com.mayletters.domain.Address</class>
 		
 		<!-- add your persistent classes here	-->
 	</persistence-unit>

@@ -19,33 +19,32 @@ public class Right extends AbsEntity {
 	@SequenceGenerator(name = "rights_gen", sequenceName = "rights_seq")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "rights_gen")
 	public Long id;
-
+	
 	@ManyToOne(optional = false)
-	@JoinColumn(name = "user_id" ,nullable=false, updatable = false)
-	private User user;
+	@JoinColumn(name = "role_id" ,nullable=false, updatable = false)
+	private Role role;
 	
-	private com.mayletters.util.Right userRight;
-	
-	public void setUser(User user) {
-		this.user = user;
-	}
+	private String rightName;
 
-	public User getUser() {
-		return user;
-	}
-
-	public Right(User user, com.mayletters.util.Right userRight) {
+	public Right(String rightName) {
 		super();
-		this.user = user;
-		this.userRight = userRight;
+		this.rightName = rightName;
 	}
 
-	public void setUserRight(com.mayletters.util.Right userRight) {
-		this.userRight = userRight;
+	public void setRightName(String rightName) {
+		this.rightName = rightName;
 	}
 
-	public com.mayletters.util.Right getUserRight() {
-		return userRight;
+	public String getRightName() {
+		return rightName;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	public Role getRole() {
+		return role;
 	}
 
 }

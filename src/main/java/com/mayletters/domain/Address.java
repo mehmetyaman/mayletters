@@ -3,8 +3,8 @@
  */
 package com.mayletters.domain;
 
-import org.hibernate.annotations.Entity;
-import org.hibernate.annotations.Table;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 
 /**
@@ -12,7 +12,7 @@ import org.hibernate.annotations.Table;
  * 
  */
 @Entity
-@Table (appliesTo = "addresses")
+@Table (name = "address", schema = "mayletters")
 public class Address extends AbsEntity {
 
 	private static final long serialVersionUID = 1345475383444998054L;

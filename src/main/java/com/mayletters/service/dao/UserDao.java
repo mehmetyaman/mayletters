@@ -17,6 +17,13 @@ public class UserDao extends BaseDAO implements IUserDAO {
 	public Class<?> getTargetEntityClass() {
 		return targetEntity;
 	}
+	
+	public User getByUserName(String userName) {
+		return (User) appManager.createQuery(
+				"SELECT p FROM User p WHERE p.userName = :ident")
+				.setParameter("ident", userName).getResultList().get(0);
+
+	}
 
 	@SuppressWarnings("unchecked")
 	public List<User> listByBirtDate(Date date) {

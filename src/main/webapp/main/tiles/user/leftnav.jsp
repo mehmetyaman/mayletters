@@ -11,27 +11,17 @@
 </head>
 <body>
 <c:choose>
-	<c:when test="${user != null and not empty user.rights}">
+	<c:when test="${user != null and not empty user.roles}">
 		<table class="group">
 			<tr>
 				<th class="group"><fmt:message key="label.operations" /></th>
 			</tr>
-			<c:forEach var="right" items="${user.rights}">
-				<c:if test="${right.userRight eq 'WRITE_MAIL'}">
+			<c:forEach var="role" items="${user.roles}">
+				<c:forEach var="right" items="${role.rights}">
 					<tr>
-						<td><a href="/writemail.do" >Write Mail</a></td>
+						<td>rightnameeee:${right.rightName}</td>
 					</tr>
-				</c:if>
-				<c:if test="${right.userRight eq 'WRITE_CARD'}">
-					<tr>
-						<td><a href="/writecard.do" >Write Card</a></td>
-					</tr>
-				</c:if>
-				<c:if test="${right.userRight eq 'ADMIN'}">
-					<tr>
-						<td><a href="/admin.do" >Admin</a></td>
-					</tr>
-				</c:if>
+				</c:forEach>
 			</c:forEach>
 		</table>
 	</c:when>
