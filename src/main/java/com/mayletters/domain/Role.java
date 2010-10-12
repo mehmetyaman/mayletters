@@ -11,8 +11,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -32,11 +30,7 @@ public class Role extends AbsEntity {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "roles_gen")
 	private Long id;
 
-	@ManyToOne(optional = false)
-	@JoinColumn(name = "user_id" ,nullable=false, updatable = false)
-	private User user;
-	
-	@OneToMany(targetEntity=Right.class, cascade=CascadeType.ALL, mappedBy="role")
+	@OneToMany(cascade=CascadeType.ALL)
 	private Collection<Right> rights;
 
 	/*
@@ -61,14 +55,6 @@ public class Role extends AbsEntity {
 	@Override
 	public List<String> validate() {
 		return null;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public User getUser() {
-		return user;
 	}
 
 	public void setRights(Collection<Right> rights) {

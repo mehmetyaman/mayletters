@@ -12,7 +12,7 @@ import javax.persistence.Table;
  * 
  */
 @Entity
-@Table (name = "address", schema = "mayletters")
+@Table (name = "addresses", schema = "mayletters")
 public class Address extends AbsEntity {
 
 	private static final long serialVersionUID = 1345475383444998054L;
