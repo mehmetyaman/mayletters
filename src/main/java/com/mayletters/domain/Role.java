@@ -8,12 +8,15 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import com.mayletters.util.Right;
 
 /**
  * @author aykutt
@@ -30,7 +33,9 @@ public class Role extends AbsEntity {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "roles_gen")
 	private Long id;
 
+	
 	@OneToMany(cascade=CascadeType.ALL)
+	@Enumerated 
 	private Collection<Right> rights;
 
 	/*
