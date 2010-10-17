@@ -8,15 +8,12 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
-import com.mayletters.util.Right;
 
 /**
  * @author aykutt
@@ -28,6 +25,7 @@ public class Role extends AbsEntity {
 
 	private static final long serialVersionUID = -5569459993422958824L;
 
+	@SuppressWarnings("unused")
 	@Id
 	@SequenceGenerator(name = "roles_gen", sequenceName = "roles_seq")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "roles_gen")
@@ -35,7 +33,6 @@ public class Role extends AbsEntity {
 
 	
 	@OneToMany(cascade=CascadeType.ALL)
-	@Enumerated 
 	private Collection<Right> rights;
 
 	/*
@@ -69,6 +66,7 @@ public class Role extends AbsEntity {
 	public Collection<Right> getRights() {
 		return rights;
 	}
+
 
 
 }

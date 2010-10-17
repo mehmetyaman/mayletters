@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.mayletters.domain.Right;
 import com.mayletters.domain.Role;
 import com.mayletters.domain.User;
 import com.mayletters.service.dao.RightDao;
@@ -38,7 +39,10 @@ public class RegistrationController {
 
 		validator.validate(user, result);
 		List<Role> roles = new ArrayList<Role>();
-		roles.add(RolesUtil.getGuestRole());
+		List<Right> rights = new ArrayList<Right>();
+		Role guest = new Role();
+		guest.setRights(RolesUtil.getGuestRole(rights));
+		roles.add(guest);
 		user.setRoles(roles);
 		userDao.persist(user);
 
